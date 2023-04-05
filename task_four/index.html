@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>jQuery DataTables - 10 Lakhs Records</title>
+
+    <!-- jQuery and jQuery DataTables CSS/JS files -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        var data = [];
+
+        // Generate sample data (10 lakhs records)
+        for (var i = 1; i <= 1000000; i++) {
+          data.push([
+            i, // ID
+            "John Doe " + i, // Name
+            "john.doe." + i + "@example.com", // Email
+            "123-456-7890", // Phone
+            "123 Main St", // Address
+            "City", // City
+            "State", // State
+            "Country", // Country
+          ]);
+        }
+
+        // Initialize DataTable with sample data
+        $("#example").DataTable({
+          data: data,
+          columns: [
+            { title: "ID" },
+            { title: "Name" },
+            { title: "Email" },
+            { title: "Phone" },
+            { title: "Address" },
+            { title: "City" },
+            { title: "State" },
+            { title: "Country" },
+          ],
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>jQuery DataTables - 10 Lakhs Records</h1>
+    <table id="example" class="display" style="width: 100%"></table>
+  </body>
+</html>
